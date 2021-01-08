@@ -42,10 +42,21 @@
             <button class="btn btn-info" id="startBtn">Start Quiz</button>
         </div>
 
-        <div id="questions" class="hide">
-            <h2 id="questionTitle"> kjlkjlkhlhlj</h2>
-            <div id="choices"></div>
-            <div id="answer"></div>
+        <div class="box">
+            <div id="question-container" class="hide"></div>
+                <div id="questions"> Question</div>
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn"> Answer 1 </button>
+                    <button class="btn"> Answer 2 </button>
+                    <button class="btn"> Answer 3 </button>
+                    <button class="btn"> Answer 4 </button>
+                </div>
+                <div id="correct-answer"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn"> Start</button>
+            <button id="next-btn" class="next-btn btn"> Next</button>
         </div>
 
         <div id="end" class="hide">
