@@ -10,6 +10,29 @@
     <title>Trivia Game </title>
 </head>
 <body>
+    <main>
+        <!-- navigation bar with highscores link and countdown timer-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="highscores.html">View Highscores</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <!-- home page where you start the quiz-->
+          <div class="container">
+            <h1> Coding Quiz Challenge </h1>
+            <p> Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            <button class="btn btn-info" id="startBtn">Start Quiz</button>
+          </div>
+    </main>
     
     <script src="./assets/script.js"></script>
 </body>
