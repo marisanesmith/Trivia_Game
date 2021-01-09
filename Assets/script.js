@@ -12,27 +12,27 @@ console.log(timer)
 
 const questionsArray = [
     {
-        title: "Commonly used data types DO NOT include:",
+        prompt: "Commonly used data types DO NOT include:",
         choices: ["Strings", "Booleans", "Alerts", "Numbers"],
         answer: 2
     },
     {
-        title: "What CSS property changes the background color",
+        prompt: "What CSS property changes the background color",
         choices: ["backgroundColor", "color", "background", "background-color"],
         answer: 3
     },
     {
-        title: "What does HTML stand for?",
+        prompt: "What does HTML stand for?",
         choices: ["Hyper Text Markup Language", "Home Tools and Markup Language", "Hyper Text Makeup Language", "Hyperlinks and Text Markup Logistics"],
         answer: 0
     },
     {
-        title: "How do you create a function in Javascript",
+        prompt: "How do you create a function in Javascript",
         choices: ["function Myfunction()", "function = MyFunction", "function myFunction()", "funcion:myFunction()"],
         answer: 2
     },
     {
-        title: "How can you make a numbered list using HTML?",
+        prompt: "How can you make a numbered list using HTML?",
         choices: ["<ol>", "<ul>", "<li>", "<list>"],
         answer: 0
     }
@@ -73,7 +73,7 @@ function countDown() {
 }
 
 function setNextQuestion() {
-    questionTitle.innerText = questionsArray[currentQuestion].title; 
+    questionTitle.innerText = questionsArray[currentQuestion].prompt; 
     for (var i = 0; i < btnArray.length; i++) {
         btnArray[i].textContent = questionsArray[currentQuestion].choices[i];
     }
