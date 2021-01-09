@@ -12,24 +12,29 @@ console.log(timer)
 
 const questionsArray = [
     {
-        title: "lajkdlkfjlakj lkjlkjlkjl lkjlkj?",
-        choices: ["lkjljl", "lkljlkjl", "ljklkj", "lkjlkj"],
-        answer: "lkjlkjl"
+        title: "Commonly used data types DO NOT include:",
+        choices: ["Strings", "Booleans", "Alerts", "Numbers"],
+        answer: 2
     },
     {
-        title: "lajkdlkfjlakj lkjlkjlkjl lkjlkj?",
-        choices: ["lkjljl", "lkljlkjl", "ljklkj", "lkjlkj"],
-        answer: "lkjlkjl"
+        title: "What CSS property changes the background color",
+        choices: ["backgroundColor", "color", "background", "background-color"],
+        answer: 3
     },
     {
-        title: "lajkdlkfjlakj lkjlkjlkjl lkjlkj?",
-        choices: ["lkjljl", "lkljlkjl", "ljklkj", "lkjlkj"],
-        answer: "lkjlkjl"
+        title: "What does HTML stand for?",
+        choices: ["Hyper Text Markup Language", "Home Tools and Markup Language", "Hyper Text Makeup Language", "Hyperlinks and Text Markup Logistics"],
+        answer: 0
     },
     {
-        title: "lajkdlkfjlakj lkjlkjlkjl lkjlkj?",
-        choices: ["lkjljl", "lkljlkjl", "ljklkj", "lkjlkj"],
-        answer: "lkjlkjl"
+        title: "How do you create a function in Javascript",
+        choices: ["function Myfunction()", "function = MyFunction", "function myFunction()", "funcion:myFunction()"],
+        answer: 2
+    },
+    {
+        title: "How can you make a numbered list using HTML?",
+        choices: ["<ol>", "<ul>", "<li>", "<list>"],
+        answer: 0
     }
 ]
 
