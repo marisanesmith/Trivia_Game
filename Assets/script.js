@@ -1,6 +1,6 @@
 const startButton = document.getElementById("startBtn")
 
-const questionsElement = document.getElementById("questions")
+const questionsElement = document.getElementById("question-container")
 
 const startGame = document.querySelector(".container");
 console.log(startGame)
@@ -31,12 +31,12 @@ const questions = [
     }
 ]
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', beginGame)
 
 function beginGame() {
     console.log('Started')
-    startGame.setAttribute("class", "hide");
-    questionsElement.removeAttribute("class");
+    startGame.setAttribute('class', 'hide');
+    questionsElement.classList.remove('hide');
     startButton.classList.add('hide')
     // add timer & start the clock
     timer // initiate timer and countdown
