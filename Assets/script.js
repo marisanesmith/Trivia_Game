@@ -1,6 +1,8 @@
 const startButton = document.getElementById("startBtn")
-
+const questionTitle = document.getElementById("questions")
 const questionsElement = document.getElementById("question-container")
+const btnArray = document.querySelectorAll(".answer-btn");
+console.log(btnArray)
 
 const startGame = document.querySelector(".container");
 console.log(startGame)
@@ -34,6 +36,8 @@ const questionsArray = [
 startButton.addEventListener('click', beginGame)
 
 function beginGame() {
+    isGameOver = false;
+    counter = 75;
     console.log('Started')
     startGame.setAttribute('class', 'hide');
     questionsElement.classList.remove('hide');
@@ -55,6 +59,7 @@ function countDown() {
     var timerInterval = setInterval(function(){
         counter --;
     if (counter === 0 || isGameOver === true) {
+        isGameOver = true;
         endGame();
         clearInterval(timerInterval);
     }
@@ -62,20 +67,34 @@ function countDown() {
     },1000);
 }
 
-
-
 function getNextQuestion() {
-    questionsElement.innerText = questionsArray[currentQuestion].title;
+    questionTitle.innerText = questionsArray[currentQuestion].title; 
+    for (var i = 0; i < btnArray.length; i++) {
+        btnArray[i].textContent = questionsArray[currentQuestion].choices[i];
+    }
     //this function will get all the questions from the array of objects
     //create for loop and buttons for the answer choices
 }
 
-function selectAnswer() {
-// increase currentQuestion variable and then run getNextQuestion function at the end. 
-getNextQuestion();
-}
-
 //separate function for on click when user clicks right or wrong question. Subtract from timer: if/else statements
+function selectAnswer() {
+    // if/ else statement for correct-answer id
+// increase currentQuestion variable and then run getNextQuestion function at the end. 
+currentQuestion++ //check to see if we are done (on question 5)
+if (currentQuestion > 5) {
+    isGameOver = true;
+    endGame();
+}
+else {
+    getNextQuestion();
+}}
+
 
 //separate function for addEventListener "click"
 // startBtn.onclick = startGame;
+
+
+//if statements on my selectAnswer fuction (to check if answer is correct or wrong)
+//event listeners on each button with the choices 
+//endGame function
+//highscores
