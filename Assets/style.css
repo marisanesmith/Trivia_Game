@@ -13,13 +13,20 @@ body {
 .box {
     width: 800px;
     max-width: 80%;
-    background-color: teal;
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 0 10px 2px;
+    /* box-shadow: 0 0 10px 2px; */
 }
 
 .btn-grid {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    /* grid-template-columns: repeat; */
+}
+
+.btn {
+    background-color: purple;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    text-align: left;
 }

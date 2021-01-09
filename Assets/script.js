@@ -1,14 +1,14 @@
-const startBtn = document.getElementById("startBtn")
+const startButton = document.getElementById("startBtn")
 
-const questionsEl = document.getElementById("questions")
+const questionsElement = document.getElementById("questions")
 
 const startGame = document.querySelector(".container");
 console.log(startGame)
 
-var timer = document.getElementById("timer");
+let timer = document.getElementById("timer");
 console.log(timer)
 
-var questions = [
+const questions = [
     {
         title: "lajkdlkfjlakj lkjlkjlkjl lkjlkj?",
         choices: ["lkjljl", "lkljlkjl", "ljklkj", "lkjlkj"],
@@ -31,12 +31,13 @@ var questions = [
     }
 ]
 
-startBtn.addEventListener('click', startGame)
+startButton.addEventListener('click', startGame)
 
-function startGame() {
+function beginGame() {
+    console.log('Started')
     startGame.setAttribute("class", "hide");
-    questionsEl.removeAttribute("class");
-    startBtn.classList.add('hide')
+    questionsElement.removeAttribute("class");
+    startButton.classList.add('hide')
     // add timer & start the clock
     timer // initiate timer and countdown
     getNextQuestions();
@@ -57,13 +58,14 @@ function countDown() {
 document.getElementById("timer").innerHTML = count + "seconds left";
 
 function getNextQuestion() {
+    questionsElement.innerText = questions.questions
     //this function will get all the questions from the array of objects
     //create for loop and buttons for the answer choices
 }
 
-function selectAnswer {
+// function selectAnswer {
 
-}
+// }
 
 //separate function for on click when user clicks right or wrong question. Subtract from timer: if/else statements
 
