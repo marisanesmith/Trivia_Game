@@ -49,7 +49,7 @@ function beginGame() {
     startButton.classList.add('hide')
     // add timer & start the clock
     countDown(); // initiate timer and countdown
-    setNextQuestion();
+    getNextQuestion();
 }
 
 var counter = 75;
@@ -72,7 +72,9 @@ function countDown() {
     },1000);
 }
 
-function setNextQuestion() {
+currentQuestion = 0;
+
+function getNextQuestion() {
     questionTitle.innerText = questionsArray[currentQuestion].title; 
     for (var i = 0; i < btnArray.length; i++) {
         btnArray[i].textContent = questionsArray[currentQuestion].choices[i];
@@ -91,7 +93,7 @@ if (currentQuestion > 5) {
     endGame();
 }
 else {
-    setNextQuestion();
+    getNextQuestion();
 }}
 
 
