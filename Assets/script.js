@@ -8,7 +8,7 @@ console.log(startGame)
 let timer = document.getElementById("timer");
 console.log(timer)
 
-const questions = [
+const questionsArray = [
     {
         title: "lajkdlkfjlakj lkjlkjlkjl lkjlkj?",
         choices: ["lkjljl", "lkljlkjl", "ljklkj", "lkjlkj"],
@@ -39,33 +39,41 @@ function beginGame() {
     questionsElement.classList.remove('hide');
     startButton.classList.add('hide')
     // add timer & start the clock
-    timer // initiate timer and countdown
-    getNextQuestions();
+    countDown(); // initiate timer and countdown
+    getNextQuestion();
 }
 
-var count = 30;
-var counter = setInterval (timer, 1000)
+var counter = 75;
+var isGameOver = false;
+var currentQuestion = 0;
+
+function endGame() {
+
+}
 
 function countDown() {
-    count = count -1;
-    if (count <= 0) {
-        clearInterval(counter);
-        //counter method, do something here
-        return;
+    var timerInterval = setInterval(function(){
+        counter --;
+    if (counter === 0 || isGameOver === true) {
+        endGame();
+        clearInterval(timerInterval);
     }
+    timer.textContent = counter 
+    },1000);
 }
 
-document.getElementById("timer").innerHTML = count + "seconds left";
+
 
 function getNextQuestion() {
-    questionsElement.innerText = questions.questions
+    questionsElement.innerText = questionsArray[currentQuestion].title;
     //this function will get all the questions from the array of objects
     //create for loop and buttons for the answer choices
 }
 
-// function selectAnswer {
-
-// }
+function selectAnswer() {
+// increase currentQuestion variable and then run getNextQuestion function at the end. 
+getNextQuestion();
+}
 
 //separate function for on click when user clicks right or wrong question. Subtract from timer: if/else statements
 
