@@ -2,6 +2,11 @@ const startButton = document.getElementById("startBtn")
 const questionTitle = document.getElementById("questions")
 const questionsElement = document.getElementById("question-container")
 const btnArray = document.querySelectorAll(".answer-btn");
+const correctAns = document.getElementById("correct-answer")
+const endArea = document.getElementById("end-game")
+const submitBtn = document.getElementById("submit-button")
+const playerInitials = document.getElementById("initials")
+const startQuiz = document.getElementById("start-quiz")
 // console.log(btnArray)
 
 const startGame = document.querySelector(".container");
@@ -49,7 +54,7 @@ function beginGame() {
     console.log('Started')
     startGame.setAttribute('class', 'hide');
     questionsElement.classList.remove('hide');
-    startButton.classList.add('hide')
+    // startButton.classList.add('hide')
     // add timer & start the clock
     countDown(); // initiate timer and countdown
     getNextQuestion();
@@ -60,7 +65,8 @@ var isGameOver = false;
 var currentQuestion = 0;
 
 function endGame() {
-
+    questionsElement.setAttribute('class', 'hide');
+    endArea.classList.remove('hide');
 }
 
 function countDown() {
@@ -82,40 +88,21 @@ function getNextQuestion() {
     // progressText.innerText = 'Question'
     questionTitle.innerText = questionsArray[currentQuestion].prompt; 
     for (var i = 0; i < btnArray.length; i++) {
-        btnArray[i].textContent = questionsArray[currentQuestion].choices[i];
+        var currentChoice = questionsArray[currentQuestion].choices[i]
+        console.log(currentChoice)
+        btnArray[i].textContent = currentChoice;
+        btnArray[i].setAttribute("onclick", "selectAnswer(" + "\"" + currentChoice + "\"" +")")
     }
-
-    questionsElement.classList = questionsArray[currentQuestion].prompt;
-    btnArray.classList = questionsArray[currentQuestion].choices[0];
-    btnArray.classList = questionsArray[currentQuestion].choices[1];
-    btnArray.classList = questionsArray[currentQuestion].choices[2];
-    btnArray.classList = questionsArray[currentQuestion].choices[3];
-    btnArray.classList = questionsArray[currentQuestion].choices[4];
-
-
-    //calculate the length of the questions index
-    // const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
-    // currentQuestion = availableQuestions[questionsIndex]
-    // prompt.innerText = currentQuestions.prompt
-
-    // choices.forEach(choices => {
-    //     const number = choice.dataset['number']
-    //     choices.innerText = currentQuestions['choices' + number]
-    // })
-    // availableQuestions.splice(QuestionsIndex, 1)
-    // acceptingAnswers = true
-    //this function will get all the questions from the array of objects
-    //create for loop and buttons for the answer choices
 }
 
-
 //separate function for on click when user clicks right or wrong question. Subtract from timer: if/else statements
-function selectAnswer(ans) {
-    if (questionsArray[currentQuestion].answer !=ans) {
-        btnArray.textContent = 'Wrong!';
-        secondsLeft = secondsLeft - 15;
+function selectAnswer(choice) {
+    console.log(choice);
+    if (questionsArray[currentQuestion].answer != choice) {
+        correctAns.textContent = 'Wrong!';
+        counter = counter - 15;
     } else {
-        btnArray.textContent = 'Correct!';
+        correctAns.textContent = 'Correct!';
     }
 // increase currentQuestion variable and then run getNextQuestion function at the end. 
 currentQuestion++;
@@ -130,6 +117,16 @@ else {
 if (isGameOver) {
     endGame();
 }}
+
+function saveScores(){
+    var initials = playerInitials.value;
+    var userInfo = {
+        initials: initials,
+        score: counter
+    }
+    localStorage.setItem("score", JSON.stringify(userInfo))
+}
+
 
 
 //separate function for addEventListener "click"
