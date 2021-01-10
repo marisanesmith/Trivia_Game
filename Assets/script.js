@@ -44,7 +44,7 @@ const questionsArray = [
 ]
 
 
-startButton.addEventListener('click', beginGame)
+startButton.addEventListener('click', beginGame())
 
 function beginGame() {
     questionsCounter = 0;
@@ -125,7 +125,12 @@ function saveScores(){
         score: counter
     }
     localStorage.setItem("score", JSON.stringify(userInfo))
+    endArea.setAttribute('class', 'hide');
+    startQuiz.classList.remove('hide');
+    counter = 0;
+    timerElement.textContent = 0;
 }
+
 
 
 
