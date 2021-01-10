@@ -1,3 +1,13 @@
+header nav .nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header, nav, a, .high-score {
+    text-decoration: none;
+}
+
 .hide {
     display: none;
 }

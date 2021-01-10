@@ -17,23 +17,77 @@
 </head>
 
 <body>
-    <main>
+   
         <!-- navigation bar with highscores link and countdown timer-->
         
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="highscores.html">View Highscores</a>
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-right"> -->
+            <!-- <a class="navbar-brand" href="highscores.html">View Highscores</a> -->
+    <header>
+        <nav class="nav-wrapper">
+            <div class="high-score">
+                <h3 id="view-highscores" class="high-score-title" onclick="printHighScores()"> View Highscores</h3>
+            </div>
+            <div>
+            <h3 class="time"> Time: <span id="timer">0</span></h3>
+            </div> 
+        </nav>
 
-            <div class="navbar" id="navbarNav">
+    </header>
+
+            <!-- <div class="navbar" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" tabindex="-1" aria-disabled="true">Time: <span id="timer">0</span></a>
                     </li>
                 </ul>
             </div>
-        </nav> 
+        </nav>  -->
 
-        <!-- home page where you start the quiz -->
-        <div class="container">
+    <main>
+        <!-- home page where you start the quiz with start quiz button -->
+        <section class="quiz-wrapper">
+            <div id="start-quiz" class="start-quiz">
+                <h1>Coding Quiz Challenge</h1>
+                <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                    answers will penalize your score/time by ten seconds!</p>
+                <button id="start-quiz-btn" class="startbtn"> Start Quiz </button>
+            </div>
+        
+
+        <!-- Quiz Questions after the start quiz button has been pushed-->
+            <div id="quiz-section">
+                <div class="question-mini">
+                    <div class="questions">
+                        <h1 id="quiz-question"></h1>
+                    </div>
+                </div>
+        <!-- Quiz Answer and Selection-->
+                <div class="question-mini">
+                    <div id="answers"></div>
+                    <div id="key" class="key"></div>
+                </div>
+            </div>
+        <!-- High Score End Screen-->
+            <div class="highscore" id="highscore">
+                <h2> You Have Completed the Quiz!</h2>
+                <h3> Your Final Score is <span id="final-score">0</span></h3>
+                <label for="initials-area"> Enter Your Initials: </label>
+                <input type="text" name="initials-area" max-length="4" id="initials">
+                <button id="initials-submit-button" type="submit" class="btn"> Submit </button>
+            </div>
+
+        <!-- Highscore Display Screen-->
+            <div id="highscore-display">
+                <div id="score">
+                    <h2> Highscores: </h2>
+                    <ol id="display-scores"></ol>
+                    <a href="./index.html"><button id="return-btn" class="startbtn"> Play Again </button></a>
+                    <button id="clear-btn" class="startbtn"> Clear Highscores</button>
+                </div>
+            </div>
+        </section>
+    </main>
+        <!-- <div class="container">
             <h1> Coding Quiz Challenge </h1>
             <p> Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
                 answers will penalize your score/time by ten seconds!</p>
@@ -48,9 +102,9 @@
                     <button class="answer-btn btn"> Answer 2 </button>
                     <button class="answer-btn btn"> Answer 3 </button>
                     <button class="answer-btn btn"> Answer 4 </button>
-                </div>
+                </div> -->
                 <!-- section where it will tell the player if they are right or wrong-->
-                <div id="correct-answer"></div>
+                <!-- <div id="correct-answer"></div>
             </div>
         </div>
 
@@ -66,9 +120,8 @@
                 </div>
             </div>
         </div>
-    </main>
+    </main> -->
 
     <script src="./assets/script.js"></script>
 </body>
-
 </html>
