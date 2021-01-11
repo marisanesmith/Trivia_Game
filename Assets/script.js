@@ -127,8 +127,11 @@ function saveScores(){
     localStorage.setItem("score", JSON.stringify(userInfo))
     endArea.setAttribute('class', 'hide');
     startQuiz.classList.remove('hide');
+    // questionsCounter = 0;
+    // score = 0;
     counter = 0;
     timerElement.textContent = 0;
+    // getNextQuestion();
 }
 
 
