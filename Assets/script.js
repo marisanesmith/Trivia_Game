@@ -1,3 +1,5 @@
+// GLOBAL VARIABLES
+
 const startButton = document.getElementById("startBtn")
 const questionTitle = document.getElementById("questions")
 const questionsElement = document.getElementById("question-container")
@@ -7,14 +9,10 @@ const endArea = document.getElementById("end-game")
 const submitBtn = document.getElementById("submit-button")
 const playerInitials = document.getElementById("initials")
 const startQuiz = document.getElementById("start-quiz")
-// console.log(btnArray)
-
 const startGame = document.querySelector(".container");
-// console.log(startGame)
-
 let timerElement = document.getElementById("timer");
-console.log(timer)
 
+// ARRAY OF QUIZ QUESTIONS
 const questionsArray = [
     {
         prompt: "Commonly used data types DO NOT include:",
@@ -43,9 +41,10 @@ const questionsArray = [
     }
 ]
 
-
+// Click event listener to begin the game
 startButton.addEventListener('click', beginGame)
 
+//function to start the game
 function beginGame() {
     questionsCounter = 0;
     score = 0;
@@ -55,7 +54,6 @@ function beginGame() {
     startGame.setAttribute('class', 'hide');
     questionsElement.classList.remove('hide');
     // startButton.classList.add('hide')
-    // add timer & start the clock
     countDown(); // initiate timer and countdown
     getNextQuestion();
 }
@@ -64,11 +62,13 @@ var counter = 75;
 var isGameOver = false;
 var currentQuestion = 0;
 
+//function to end the game
 function endGame() {
     questionsElement.setAttribute('class', 'hide');
     endArea.classList.remove('hide');
 }
 
+//function to countdown the timer
 function countDown() {
     var timerInterval = setInterval(function(){
         counter --;
@@ -83,6 +83,7 @@ function countDown() {
 
 currentQuestion = 0;
 
+//function to get the next question in the questions array
 function getNextQuestion() {
     questionsCounter++
     // progressText.innerText = 'Question'
@@ -95,7 +96,7 @@ function getNextQuestion() {
     }
 }
 
-//separate function for on click when user clicks right or wrong question. Subtract from timer: if/else statements
+//function for when the user selects an answer to determine if it is right or wrong 
 function selectAnswer(choice) {
     console.log(choice);
     if (questionsArray[currentQuestion].answer != choice) {
@@ -127,21 +128,9 @@ function saveScores(){
     localStorage.setItem("score", JSON.stringify(userInfo))
     endArea.setAttribute('class', 'hide');
     startQuiz.classList.remove('hide');
-    // questionsCounter = 0;
-    // score = 0;
     counter = 0;
     timerElement.textContent = 0;
     // getNextQuestion();
 }
 
-
-
-
-//separate function for addEventListener "click"
-// startBtn.onclick = startGame;
-
-
-//if statements on my selectAnswer fuction (to check if answer is correct or wrong)
-//event listeners on each button with the choices 
-//endGame function
 //highscores
