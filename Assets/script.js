@@ -119,6 +119,7 @@ if (isGameOver) {
     endGame();
 }}
 
+//function to save high scores
 function saveScores(){
     var initials = playerInitials.value;
     var userInfo = {
