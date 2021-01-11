@@ -44,7 +44,7 @@ const questionsArray = [
 ]
 
 
-startButton.addEventListener('click', beginGame())
+startButton.addEventListener('click', beginGame)
 
 function beginGame() {
     questionsCounter = 0;
