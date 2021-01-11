@@ -17,11 +17,22 @@
 </head>
 
 <body>
-   
-        <!-- navigation bar with highscores link and countdown timer-->
-        
+    <!-- navigation bar with highscores link and countdown timer-->
+     <header>  
         <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
             <a class="navbar-brand" href="highscores.html">View Highscores</a>
+            
+            <div class="navbar" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link">Time: <span id="timer">0</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav> 
+    </header> 
+    
+
     <!-- <header>
         <nav class="nav-wrapper">
             <div class="high-score">
@@ -31,17 +42,7 @@
             <h3 class="time"> Time: <span id="timer">0</span></h3>
             </div> 
         </nav>
-
     </header> -->
-
-            <div class="navbar" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" tabindex="-1" aria-disabled="true">Time: <span id="timer">0</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav> 
 
     <!-- <main> -->
         <!-- home page where you start the quiz with start quiz button -->
@@ -88,14 +89,15 @@
         </section>
     </main> -->
 
-
+    <main>
+        <!-- Container that holds the text for Coding Quiz Challenge & has the start button-->
         <div id="start-quiz" class="container">
             <h1> Coding Quiz Challenge </h1>
             <p> Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
                 answers will penalize your score/time by ten seconds!</p>
             <button class="btn btn-info" id="startBtn">Start Quiz</button>
         </div>
-
+        <!-- Container with all the questions and answer buttons-->
         <div class="box">
             <div id="question-container" class="hide">
                 <div id="questions"> Question</div>
@@ -105,15 +107,17 @@
                     <button class="answer-btn btn"> Answer 3 </button>
                     <button class="answer-btn btn"> Answer 4 </button>
                 </div> 
-                <!-- section where it will tell the player if they are right or wrong-->
+        <!-- section where it will tell the player if they are right or wrong-->
                 <div id="correct-answer"></div>
             </div>
         </div>
 
+        <!-- The end of the game where it will show the player their final score & they can enter their initials-->
+     <section>
         <div id="end-game" class="hide">
             <h2> All Done! </h2>
             <p> Your final score is <span id="finalScore"></span></p>
-
+        <!-- Section where the user can input their initials and save their score to local storage-->
             <div class="input-group mb-3">
                 <input id="initials" type="text" class="form-control" placeholder="Recipient's username"
                     aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -122,8 +126,8 @@
                 </div>
             </div>
         </div>
+    </section>
     </main>
-
     <script src="./assets/script.js"></script>
 </body>
 </html>
