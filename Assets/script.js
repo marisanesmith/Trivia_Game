@@ -12,6 +12,7 @@ const startQuiz = document.getElementById("start-quiz")
 const startGame = document.querySelector(".container");
 let timerElement = document.getElementById("timer");
 const highScoreDisplay = document.getElementById("highscore-display")
+const finalScore = document.getElementById("final-score")
 
 // ARRAY OF QUIZ QUESTIONS
 const questionsArray = [
@@ -127,7 +128,8 @@ function saveScores(){
     var initials = playerInitials.value;
     var userInfo = {
         initials: initials,
-        score: counter
+        // score: counter
+        score: finalScore.value
     }
     localStorage.setItem("score", JSON.stringify(userInfo))
     endArea.setAttribute('class', 'hide');
