@@ -2,6 +2,12 @@
 .hide {
     display: none;
 }
+h1 {
+    padding: 10px;
+    margin: 15px;
+    color: purple;
+    text-align: left;
+}
 
 body {
     padding: 0;
@@ -59,10 +65,21 @@ section {
 
 .btn {
     background-color: purple;
+    border-radius: 8px;
     padding: 5px;
     margin: 8px;
     color: white;
     text-align: left;
+}
+
+.start-again {
+    background-color: purple;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 15px;
+    color: white;
+    align-items: center;
+    justify-content: center;
 }
 
 

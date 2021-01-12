@@ -11,6 +11,7 @@ const playerInitials = document.getElementById("initials")
 const startQuiz = document.getElementById("start-quiz")
 const startGame = document.querySelector(".container");
 let timerElement = document.getElementById("timer");
+const highScoreDisplay = document.getElementById("highscore-display")
 
 // ARRAY OF QUIZ QUESTIONS
 const questionsArray = [
@@ -52,6 +53,7 @@ function beginGame() {
     counter = 75;
     console.log('Started')
     startGame.setAttribute('class', 'hide');
+    // highScoreDisplay.setAttribute('class','hide');
     questionsElement.classList.remove('hide');
     // startButton.classList.add('hide')
     countDown(); // initiate timer and countdown
@@ -65,6 +67,7 @@ var currentQuestion = 0;
 //function to end the game
 function endGame() {
     questionsElement.setAttribute('class', 'hide');
+    // highScoreDisplay.setAttribute('class','hide');
     endArea.classList.remove('hide');
 }
 
@@ -129,9 +132,12 @@ function saveScores(){
     localStorage.setItem("score", JSON.stringify(userInfo))
     endArea.setAttribute('class', 'hide');
     startQuiz.classList.remove('hide');
+    // highScoreDisplay.classList.remove('hide');
     counter = 0;
     timerElement.textContent = 0;
     // getNextQuestion();
 }
+
+
 
 //highscores
