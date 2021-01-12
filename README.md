@@ -1,11 +1,16 @@
 # Trivia_Game
-The purpose of this project is to build a trivia game with HTML, CSS &amp; JavaScript
+
+The purpose of this project is to build a trivia game with HTML, CSS and JavaScript. The objective is to correctly answer questions relating to Javascript. If the user does not answer the question correctly then 15 seconds will be subtracted from the clock. 
+
+The player will be able to play as many times as they want and save their score by entering their initials to local storage. The goal is to be able to view their highscores as it compares to other users highscores. 
 
 ## Table of Contents
-* [Add Bootstrap Reference Links](#add-bootstrap-reference-links)
-* [Create a Responsive About Me Page](#create-a-responsive-about-me-page)
-* [Create a Responsive Portfolio Page](#create-a-responsive-portfolio-page)
-* [Create a Responsive Contact Page](#create-a-responsive-contact-page)
+* [Add Bootstrap Reference Links](#Add-bootstrap-reference-links)
+* [Add External CSS & JS Files](#Add-external-CSS-and-JS-files)
+* [Create a Functional Home Page](#Create-a-functional-home-page-with-a-start-button)
+* [Create the Questions for the Quiz](#Create-the-Questions-for-the-Quiz)
+* [Player Enters Initials After Game is Finished](#Player-enters-initials-after-game-is-finished)
+* [Highscores Page](#Highscores-Page)
 * [Providing a URL for the Website](#Providing-a-URL-for-the-Website)
 * [Credits](#Credits)
 
@@ -13,32 +18,32 @@ The purpose of this project is to build a trivia game with HTML, CSS &amp; JavaS
 ## Add Bootstrap Reference Links
 1. Add Bootstrap Reference Links for CSS and JS from the getbootstrap webpage
 
-## Create a Responsive About Me Page
-1. Use Bootstrap to create the About Me page 
+## Add external CSS and JS files
+1. Create and add the external CSS style sheet to the index.html file
+2. Create and add the script tag for the JS file to the index.html file
 
-![Full Size About Me Page](assets/images/about-me-comp.png)
+## Create a functional home page with a start button
+1. Use Javascript to create a fully functional home page with a start quiz button to begin the game and start the timer.
 
-![Tablet Size About Me Page](assets/images/about-me-tablet.png)  
+![Home Page with Button to Start QUiz](assets/images/portfolio-comp.png)
 
-![Phone Size About Me Page](assets/images/about-me-phone.png)
+## Create the Questions for the Quiz
+1. Use Javascript to allow the array of questions to appear on the webpage
+2. Allow the player to select the correct (or wrong) answer and add to their score
 
-## Create a Responsive Portfolio Page
-1. Use Bootstrap to create the Portfolio page
+![Questions Page for the Quiz](assets/images/contact-comp.png)
 
-![Full Size Portfolio Page](assets/images/portfolio-comp.png)
+## Player enters initials after game is finished
+1. Use Javascript to allow the player to enter their initials after completing the trivia game
+2. The user will be able to see their score
 
-![Tablet Size Portfolio Page](assets/images/porfolio-tablet.png)
+![End Game with input box for users initials](assets/images/contact-comp.png)
 
-![Phone Size Portfolio Page](assets/images/porfolio-phone.png)
+## Highscores Page
+1. Create a highscores.html file that will show the list of highscores
+2. The player can exit back to the game from the highscores page
 
-## Create a Responsive Contact Page
-1. Use Bootstrap to create the Contact page
-
-![Full Size Contact Page](assets/images/contact-comp.png)
-
-![Tablet Size Contact Page](assets/images/contact-tablet.png)
-
-![Phone Size Contact Page](assets/images/contact-phone.png)
+![Highscores page with the top score](assets/images/contact-comp.png)
 
 
 ## Providing a URL for the website
