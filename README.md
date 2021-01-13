@@ -25,7 +25,7 @@ The player will be able to play as many times as they want and save their score 
 ## Create a functional home page with a start button
 1. Use Javascript to create a fully functional home page with a start quiz button to begin the game and start the timer.
 
-![Home Page with Button to Start QUiz](assets/code-quiz-homescreen.jpg)
+![Home Page with Button to Start QUiz](assets/homepage.png)
 
 ## Create the Questions for the Quiz
 1. Use Javascript to allow the array of questions to appear on the webpage
