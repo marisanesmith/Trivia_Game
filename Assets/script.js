@@ -44,7 +44,8 @@ const questionsArray = [
 ]
 
 // Click event listener to begin the game
-startButton.addEventListener('click', beginGame)
+// startButton.addEventListener('click', beginGame)
+startButton.onclick = beginGame;
 
 //function to start the game
 function beginGame() {
@@ -70,6 +71,7 @@ function endGame() {
     questionsElement.setAttribute('class', 'hide');
     // highScoreDisplay.setAttribute('class','hide');
     endArea.classList.remove('hide');
+    finalScore.textContent = counter;
 }
 
 //function to countdown the timer
@@ -124,21 +126,45 @@ if (isGameOver) {
 }}
 
 //function to save high scores
-function saveScores(){
+function saveScores() 
+{
     var initials = playerInitials.value;
     var userInfo = {
         initials: initials,
-        // score: counter
-        score: finalScore.value
+        score: counter
+        // score: finalScore.value
     }
-    localStorage.setItem("score", JSON.stringify(userInfo))
+    window.localStorage.setItem("score", JSON.stringify(userInfo))
+    var playerHighscore = [];
+    playerHighscore = JSON.parse(localStorage.getItem("score")) || [];
+
+    // var playerHighscore = [];
+    // playerHighscore = JSON.parse(window.localStorage.getItem("score"));
+    playerHighscore.push(userInfo)
     endArea.setAttribute('class', 'hide');
-    startQuiz.classList.remove('hide');
-    // highScoreDisplay.classList.remove('hide');
+    window.location.href="highscores.html";
     counter = 0;
     timerElement.textContent = 0;
     // getNextQuestion();
+    console.log(playerHighscore);
 }
+
+const initialEntry = document.getElementById("initial-entry")
+initialEntry.onclick = saveScores;
+
+function highscoresList() {
+    var playerHighscore = JSON.parse(localStorage.getItem("score")) || [];
+    playerHighscore.forEach(function(score){
+        var listItem = document.createElement("li");
+        listItem.textContent = score.initials + " - " + score.score;
+        var orderedList = document.getElementById("display-scores");
+        orderedList.appendChild(listItem)
+    });
+  }
+
+  highscoresList();
+
+
 
 
 
