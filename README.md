@@ -25,19 +25,19 @@ The player will be able to play as many times as they want and save their score 
 ## Create a functional home page with a start button
 1. Use Javascript to create a fully functional home page with a start quiz button to begin the game and start the timer.
 
-![Home Page with Button to Start QUiz](assets/homepage.png)
+![Home Page with Button to Start QUiz](assets/images/homepage.png)
 
 ## Create the Questions for the Quiz
 1. Use Javascript to allow the array of questions to appear on the webpage
 2. Allow the player to select the correct (or wrong) answer and add to their score
 
-![Questions Page for the Quiz](assets/questions.jpg)
+![Questions Page for the Quiz](assets/images/questions.jpg)
 
 ## Player enters initials after game is finished
 1. Use Javascript to allow the player to enter their initials after completing the trivia game
 2. The user will be able to see their score
 
-![End Game with input box for users initials](assets/enter-initials.jpg)
+![End Game with input box for users initials](assets/images/enter-initials.jpg)
 
 ## Highscores Page
 1. Create a highscores.html file that will show the list of highscores
