@@ -140,7 +140,7 @@ function saveScores()
 
     // var playerHighscore = [];
     // playerHighscore = JSON.parse(window.localStorage.getItem("score"));
-    playerHighscore.push(userInfo)
+    // playerHighscore.push(userInfo)
     endArea.setAttribute('class', 'hide');
     window.location.href="highscores.html";
     counter = 0;
