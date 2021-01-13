@@ -12,6 +12,7 @@ const startQuiz = document.getElementById("start-quiz")
 const startGame = document.querySelector(".container");
 let timerElement = document.getElementById("timer");
 const highScoreDisplay = document.getElementById("highscore-display")
+const initialBtn = document.getElementById("initial-entry")
 
 // ARRAY OF QUIZ QUESTIONS
 const questionsArray = [
@@ -127,44 +128,103 @@ if (isGameOver) {
     endGame();
 }}
 
+// original fuction to save high scores
+// function saveScores(){
+// var playerHighscore = [];
+//     playerHighscore = JSON.parse(window.localStorage.getItem("score"));
+//     playerHighscore.push(userInfo)
+
+//     endArea.setAttribute('class', 'hide');
+//     window.location.href="highscores.html";
+//     counter = 0;
+//     timerElement.textContent = 0;
+//     // getNextQuestion();
+//     console.log(playerHighscore);
+// }
+
 //function to save high scores
-function saveScores() 
-{
+function saveScores() {
     var initials = playerInitials.value;
+    window.location.href="highscores.html";
+
+
+    if (initials != "") {
+        var highscores = JSON.parse(window.localStorage.getItem("score")) || [];
+
+        window.localStorage.setItem("score", JSON.stringify(userInfo))
+    var playerHighscore = [];
+    playerHighscore = JSON.parse(localStorage.getItem("score")) || [];
+
     var userInfo = {
         initials: initials,
         score: counter
         // score: finalScore.value
+    };
+    // save to local storage
+    highscores.push(userInfo);
+    window.localStorage.setItem("score", JSON.stringify(score));
     }
-    window.localStorage.setItem("score", JSON.stringify(userInfo))
-    var playerHighscore = [];
-    playerHighscore = JSON.parse(localStorage.getItem("score")) || [];
+    
+    printHighScores();
 
-    // var playerHighscore = [];
-    // playerHighscore = JSON.parse(window.localStorage.getItem("score"));
-    // playerHighscore.push(userInfo)
-    endArea.setAttribute('class', 'hide');
-    window.location.href="highscores.html";
-    counter = 0;
-    timerElement.textContent = 0;
-    // getNextQuestion();
-    console.log(playerHighscore);
 }
 
-const initialEntry = document.getElementById("initial-entry")
-initialEntry.onclick = saveScores;
+function checkForEnter(event) {
+    if (event.key === "Enter") {
+        saveScores();
+    }
+}
 
-function highscoresList() {
-    var playerHighscore = JSON.parse(localStorage.getItem("score")) || [];
-    playerHighscore.forEach(function(score){
-        var listItem = document.createElement("li");
-        listItem.textContent = score.initials + " - " + score.score;
-        var orderedList = document.getElementById("display-scores");
-        orderedList.appendChild(listItem)
+//function to display high scores
+function printHighScores() {
+
+    // either get scores from local storage or set to an empty array
+    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+    // sort highscores by score property in descending order
+    highscores.sort(function(a,b) {
+        return b.score - a.score;
     });
-  }
 
-  highscoresList();
+    highscores.forEach(function(score) {
+        var listTag = document.createElement("li");
+        listTag.textContent = score.initials + " - " + score.score;
+
+        //display on page
+        var olElement = document.getElementById("display-scores");
+        olElement.appendChild(listTag);
+    });
+}
+
+// function to clear high scores
+
+function clearHighScores() {
+    window.localStorage.removeItem("highscores");
+    window.location.reload();
+}
+
+// document.getElementById("clear-btn").onclick = clearHighScores;
+
+//user clicks button to submit initials
+initialBtn.onclick = saveScores;
+
+
+
+
+
+// const initialEntry = document.getElementById("initial-entry")
+// initialEntry.onclick = saveScores;
+
+// function highscoresList() {
+//     var playerHighscore = JSON.parse(localStorage.getItem("score")) || [];
+//     playerHighscore.forEach(function(score){
+//         var listItem = document.createElement("li");
+//         listItem.textContent = score.initials + " - " + score.score;
+//         var orderedList = document.getElementById("display-scores");
+//         orderedList.appendChild(listItem)
+//     });
+//   }
+
+//   highscoresList();
 
 
 
