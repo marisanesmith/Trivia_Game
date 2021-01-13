@@ -116,7 +116,7 @@ function selectAnswer(choice) {
     }
 // increase currentQuestion variable and then run getNextQuestion function at the end. 
 currentQuestion++;
-//check to see if we are done (on question 5)
+//check to see if we are done with questions
 if (currentQuestion < questionsArray.length) {
     getNextQuestion();
     // endGame();
