@@ -12,7 +12,6 @@ const startQuiz = document.getElementById("start-quiz")
 const startGame = document.querySelector(".container");
 let timerElement = document.getElementById("timer");
 const highScoreDisplay = document.getElementById("highscore-display")
-const finalScore = document.getElementById("final-score")
 
 // ARRAY OF QUIZ QUESTIONS
 const questionsArray = [
@@ -22,14 +21,14 @@ const questionsArray = [
         answer: "Alerts"
     },
     {
-        prompt: "What CSS property changes the background color",
-        choices: ["backgroundColor", "color", "background", "background-color"],
-        answer: "background-color"
+        prompt: "Arrays in JavaScript can be used to store ________.",
+        choices: ["booleans", "other arrays", "numbers and strings", "all of the above"],
+        answer: "all of the above"
     },
     {
-        prompt: "What does HTML stand for?",
-        choices: ["Hyper Text Markup Language", "Home Tools and Markup Language", "Hyper Text Makeup Language", "Hyperlinks and Text Markup Logistics"],
-        answer: "Hyper Text Markup Language"
+        prompt: "What do you use to enclose string values when assigned to variables?",
+        choices: ["curly brackets", "quotes", "parenthesis", "commas"],
+        answer: "quotes"
     },
     {
         prompt: "How do you create a function in Javascript",
@@ -37,9 +36,9 @@ const questionsArray = [
         answer: "function myFunction()"
     },
     {
-        prompt: "How can you make a numbered list using HTML?",
-        choices: ["<ol>", "<ul>", "<li>", "<list>"],
-        answer: "<ol>"
+        prompt: "A very useful tool for users during development and debugging which is used to print content to the debugger is:",
+        choices: ["terminal", "console log", "while loops", "an object"],
+        answer: "console log"
     }
 ]
 
@@ -68,11 +67,14 @@ var currentQuestion = 0;
 
 //function to end the game
 function endGame() {
+    clearInterval(counter)
     questionsElement.setAttribute('class', 'hide');
     // highScoreDisplay.setAttribute('class','hide');
     endArea.classList.remove('hide');
+    var finalScore = document.querySelector("#final-score")
     finalScore.textContent = counter;
 }
+
 
 //function to countdown the timer
 function countDown() {
