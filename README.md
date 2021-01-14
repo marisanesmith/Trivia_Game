@@ -37,7 +37,7 @@ The player will be able to play as many times as they want and save their score 
 1. Use Javascript to allow the player to enter their initials after completing the trivia game
 2. The user will be able to see their score
 
-![End Game with input box for users initials](./assets/images/enter-initials.png
+![End Game with input box for users initials](./assets/images/enter-initials.png)
 
 ## Highscores Page
 1. Create a highscores.html file that will show the list of highscores
