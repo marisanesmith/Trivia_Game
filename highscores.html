@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,17 +15,32 @@
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <title>Highscores</title>
 </head>
+
 <body>
     <div id="highscore-display">
         <div id="scores">
             <h1> Highscores</h1>
-            <ol id="display-scores">List</ol>
+            <ol id="display-scores"></ol>
             <!-- <a href="./index.html"><button id="highscore-display" class="start-again"> Go Back </button> </a> -->
             <a href="./index.html"><button id="return-btn" class="start-again"> Play Again </button></a>
-            <button id="clear-btn" class="start-again"> Clear Highscores </button>
+            <!-- <button id="clear-btn" class="start-again"> Clear Highscores </button> -->
 
         </div>
     </div>
-    <script src="./assets/script.js"></script>
+    <script>
+
+        function highscoresList() {
+            var playerHighscore = JSON.parse(localStorage.getItem("score")) || [];
+            playerHighscore.forEach(function (score) {
+                var listItem = document.createElement("li");
+                listItem.textContent = score.initials + " - " + score.score;
+                var orderedList = document.getElementById("display-scores");
+                orderedList.appendChild(listItem)
+            });
+        }
+
+        highscoresList();
+    </script>
 </body>
+
 </html>
