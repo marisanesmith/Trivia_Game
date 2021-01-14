@@ -54,7 +54,7 @@ The player will be able to play as many times as they want and save their score 
 5. Create repository
 6. Inside the repo go to settings, scroll down to GitHub Pages and publish your site to the Branch: main
 
-[GitHub Live Site](https://marisanesmith.github.io/responsive_portfolio)
+[GitHub Live Site](https://marisanesmith.github.io/Trivia_Game/)
 
 ## Credits
 
