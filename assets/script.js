@@ -48,8 +48,6 @@ const questionsArray = [
 
 // Click event listener to begin the game
 startButton.addEventListener('click', beginGame)
-// startButton.onclick = beginGame;
-// $("#start-btn").on("click", beginGame)
 
 //function to start the game
 function beginGame() {
@@ -59,10 +57,9 @@ function beginGame() {
     counter = 75;
     console.log('Started')
     startGame.setAttribute('class', 'hide');
-    // highScoreDisplay.setAttribute('class','hide');
     questionsElement.classList.remove('hide');
-    // startButton.classList.add('hide')
-    countDown(); // initiate timer and countdown
+    // initiate timer and countdown
+    countDown(); 
     getNextQuestion();
 }
 
@@ -70,7 +67,6 @@ function beginGame() {
 function endGame() {
     clearInterval(counter)
     questionsElement.setAttribute('class', 'hide');
-    // highScoreDisplay.setAttribute('class','hide');
     endArea.classList.remove('hide');
     var finalScore = document.querySelector("#final-score")
     finalScore.textContent = score;
@@ -93,7 +89,6 @@ function countDown() {
 //function to get the next question in the questions array
 function getNextQuestion() {
     questionsCounter++
-    // progressText.innerText = 'Question'
     questionTitle.innerText = questionsArray[currentQuestion].prompt; 
     for (var i = 0; i < btnArray.length; i++) {
         var currentChoice = questionsArray[currentQuestion].choices[i]
@@ -136,31 +131,12 @@ function saveScores()
     var userInfo = {
         initials: initials,
         score: score
-        // score: finalScore.value
     }
     savedScores.push(userInfo);
     localStorage.setItem("score", JSON.stringify(savedScores))
-    // var playerHighscore = [];
-    // playerHighscore = JSON.parse(localStorage.getItem("score")) || [];
-
-    // // var playerHighscore = [];
-    // // playerHighscore = JSON.parse(window.localStorage.getItem("score"));
-    // // playerHighscore.push(userInfo)
-    // endArea.setAttribute('class', 'hide');
     window.location.href="highscores.html";
-    // counter = 0;
-    // timerElement.textContent = 0;
-    // // getNextQuestion();
-    // console.log(playerHighscore);
 }
 
 const initialEntry = document.getElementById("initial-entry")
 initialEntry.onclick = saveScores;
 
-
-
-
-
-
-
-//highscores
